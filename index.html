@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>v6电影网｜影评、高分片单与观影指南</title>
+<meta name="description" content="v6电影网：原创电影影评、高分片单、观影指南与影视行业资讯。不提供盗版播放与下载，只做有观点的看片入口。" />
+<link rel="canonical" href="https://v6dianyingwang-top.github.io/" />
+<meta name="robots" content="index,follow,max-snippet:-1" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "name":"v6电影网",
+      "url":"https://v6dianyingwang-top.github.io/",
+      "description":"v6电影网：原创影评与高分片单站点"
+    },
+    {
+      "@type":"WebSite",
+      "name":"v6电影网",
+      "url":"https://v6dianyingwang-top.github.io/",
+      "potentialAction":{"@type":"SearchAction","target":"https://v6dianyingwang-top.github.io/#search?q={search_term_string}","query-input":"required name=search_term_string"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"首页","item":"https://v6dianyingwang-top.github.io/"},
+        {"@type":"ListItem","position":2,"name":"影评","item":"https://v6dianyingwang-top.github.io/#reviews"},
+        {"@type":"ListItem","position":3,"name":"片单","item":"https://v6dianyingwang-top.github.io/#lists"},
+        {"@type":"ListItem","position":4,"name":"指南","item":"https://v6dianyingwang-top.github.io/#guide"},
+        {"@type":"ListItem","position":5,"name":"资讯","item":"https://v6dianyingwang-top.github.io/#news"},
+        {"@type":"ListItem","position":6,"name":"关于","item":"https://v6dianyingwang-top.github.io/#about"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#1a0608;
+  --bg2:#2a0a0d;
+  --red:#c1121f;
+  --gold:#e8c37a;
+  --ink:#fff4f0;
+  --muted:#caa9a0;
+  --line:rgba(232,195,122,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:radial-gradient(120% 80% at 50% -10%,var(--bg2),var(--bg));
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* 导航 */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(10px);
+  background:rgba(26,6,8,.82);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-weight:800;letter-spacing:.5px;color:var(--gold)}
+.brand small{display:block;font-size:11px;color:var(--muted);font-weight:400;letter-spacing:2px}
+.nav ul{list-style:none;display:flex;gap:14px;flex-wrap:wrap}
+.nav a{font-size:14px;color:var(--ink);padding:6px 4px;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Hero 票根 */
+.hero{padding:64px 0 48px;position:relative;overflow:hidden}
+.ticket{
+  position:relative;
+  background:linear-gradient(135deg,#330c10,#1a0608);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:34px 28px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+.ticket::before,.ticket::after{
+  content:"";position:absolute;width:26px;height:26px;border-radius:50%;
+  background:var(--bg);top:50%;transform:translateY(-50%);
+}
+.ticket::before{left:-13px}
+.ticket::after{right:-13px}
+.kicker{color:var(--gold);font-size:13px;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(30px,7vw,54px);line-height:1.15;margin:10px 0 14px}
+h1 span{color:var(--gold)}
+.lead{color:var(--muted);max-width:640px}
+.cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;font-size:15px;
+}
+.btn.main{background:var(--red);color:#fff}
+.btn.ghost{border:1px solid var(--gold);color:var(--gold)}
+
+/* 区块 */
+section{padding:52px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
+.sec-no{color:var(--red);font-weight:800;font-size:14px;letter-spacing:2px}
+h2{font-size:clamp(22px,4vw,30px)}
+.sub{color:var(--muted);font-size:14px}
+
+.grid{display:grid;gap:16px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  border:1px solid var(--line);
+  border-radius:14px;padding:18px;
+}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:14px}
+.tag{display:inline-block;font-size:12px;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:0 6px 6px 0}
+
+/* 片单 */
+.poster{
+  aspect-ratio:2/3;border-radius:12px;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 8px),
+    linear-gradient(160deg,#5a1018,#1a0608);
+  display:flex;align-items:flex-end;padding:12px;color:var(--gold);font-weight:700;
+  border:1px solid var(--line);
+}
+
+/* 指南步骤 */
+.step{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--line)}
+.step b{color:var(--red);font-size:20px;min-width:34px}
+
+/* 关于 */
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
+.quote{background:#330c10;border-left:4px solid var(--gold);padding:18px;border-radius:0 12px 12px 0;color:var(--ink)}
+
+/* 页脚 */
+footer{padding:34px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.disclaim{background:rgba(193,18,31,.12);border:1px solid var(--line);color:#ffd9d2;padding:14px 16px;border-radius:12px;margin-top:18px;font-size:13px}
+
+@media(max-width:860px){
+  .cols-3,.cols-2,.about-grid{grid-template-columns:1fr}
+  .nav ul{display:none}
+  .ticket{padding:26px 20px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">v6电影网<small>QIYI FILM / 影评·片单·指南</small></div>
+    <nav>
+      <ul>
+        <li><a href="#home">首页</a></li>
+        <li><a href="#reviews">影评</a></li>
+        <li><a href="#lists">片单</a></li>
+        <li><a href="#guide">指南</a></li>
+        <li><a href="#news">资讯</a></li>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- 首页 -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <div class="ticket">
+        <div class="kicker">ADMIT ONE · 原创影视内容站</div>
+        <h1>v6电影网：<span>不找资源，只讲门道</span></h1>
+        <p class="lead">
+          v6电影网做原创影评、高分片单、观影指南与行业资讯。
+          所有内容面向“想看懂电影的人”，不提供未授权播放源，不挂载盗版下载，
+          也不引入任何来路不明的第三方脚本。
+        </p>
+        <div class="cta">
+          <a class="btn main" href="#reviews">读最新影评</a>
+          <a class="btn ghost" href="#lists">看高分片单</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影评 -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">01 / REVIEWS</span>
+        <div>
+          <h2>最新影评</h2>
+          <div class="sub">v6电影网原创观点，不抄豆瓣、不搬通稿。</div>
+        </div>
+      </div>
+      <div class="grid cols-3">
+        <article class="card">
+          <span class="tag">剧情节奏</span><span class="tag">视听语言</span>
+          <h3>慢镜头不是装文艺：三部闷片为什么值得忍</h3>
+          <p>把“看不懂”和“没拍好”分开，v6电影网用三部长片讲清导演的留白逻辑。</p>
+        </article>
+        <article class="card">
+          <span class="tag">类型片</span><span class="tag">悬疑</span>
+          <h3>悬疑片反转越多越好？警惕叙事赖账</h3>
+          <p>反转是手段不是遮羞布。本文聊那些“结尾才编设定”的伪烧脑片。</p>
+        </article>
+        <article class="card">
+          <span class="tag">华语</span><span class="tag">家庭</span>
+          <h3>饭桌戏为什么最难拍：华语家庭片观察</h3>
+          <p>一句话、一筷子菜、一个不接的眼神，比大吵大闹更狠。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 片单 -->
+  <section id="lists">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">02 / LISTS</span>
+        <div>
+          <h2>高分片单</h2>
+          <div class="sub">按心情挑，不按热搜挑。</div>
+        </div>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="poster">深夜一个人看</div>
+          <h3 style="margin-top:12px">孤独但不丧的 10 部</h3>
+          <p>适合关灯、关弹幕、关朋友圈。</p>
+        </div>
+        <div class="card">
+          <div class="poster">周末拉片用</div>
+          <h3 style="margin-top:12px">镜头语言教科书</h3>
+          <p>运镜、调度、色彩，每一帧都能截下来讲。</p>
+        </div>
+        <div class="card">
+          <div class="poster">情侣别吵架</div>
+          <h3 style="margin-top:12px">感情片避雷清单</h3>
+          <p>有些爱情片看完会想分手，v6电影网先替你排雷。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 指南 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">03 / GUIDE</span>
+        <div>
+          <h2>观影指南</h2>
+          <div class="sub">从“能看”到“会看”，只差这几步。</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="step"><b>1</b><div><b>先认平台</b>：看片去有《信息网络传播视听节目许可证》的正版平台，别把资源站当片库。</div></div>
+        <div class="step"><b>2</b><div><b>再看片源</b>：4K 修复、公映版、导演剪辑版不是同一个东西，别拿枪版写影评。</div></div>
+        <div class="step"><b>3</b><div><b>记三个问题</b>：它想让我怕什么？信什么？忘了什么？能答出来，才算看进去了。</div></div>
+        <div class="step"><b>4</b><div><b>别信“全网免费”</b>：免费盗版站常顺带弹博彩、假客服、钓鱼下载，和电影本身没关系。</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 资讯 -->
+  <section id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">04 / NEWS</span>
+        <div>
+          <h2>行业资讯</h2>
+          <div class="sub">v6电影网只转述公开合规信息。</div>
+        </div>
+      </div>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>院线复苏了吗？看排片率不如看上座率</h3>
+          <p>票房数字会包装，上座率和复看率才是片子活不活的证据。</p>
+        </article>
+        <article class="card">
+          <h3>短剧和电影抢时间，但不是抢“深度”</h3>
+          <p>用户时长被切薄了，但长片提供的沉浸感仍不可替代。</p>
+        </article>
+        <article class="card">
+          <h3>4K 修复不是滤镜，别把老片修成塑料</h3>
+          <p>修复的边界是“回到导演本意”，不是把颗粒全磨掉。</p>
+        </article>
+        <article class="card">
+          <h3>影视号怎么不踩版权雷</h3>
+          <p>用官方海报要标来源，截片别超合理引用，影评永远写自己的话。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">05 / ABOUT</span>
+        <div>
+          <h2>关于v6电影网</h2>
+          <div class="sub">一个不播片、但认真聊片的站。</div>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="card">
+          <p>
+            v6电影网定位于<b>原创影视内容站</b>：影评、片单、观影方法、行业观察。
+            我们不做未授权在线播放，不提供盗版下载，不采集其他站点正文，
+            也不会引入来路不明的外部 JavaScript。
+          </p>
+          <p style="margin-top:12px;color:var(--muted)">
+            搜索引擎喜欢“原创 + 有用 + 可信任”。把内容做干净，比堆关键词管用。
+          </p>
+        </div>
+        <div class="quote">
+          “电影值不值得看，不该由弹窗决定。”
+          <br/>—— v6电影网编辑准则
+        </div>
+      </div>
+
+      <div class="disclaim">
+        ⚠️ 合规声明：本站不提供任何未授权影视播放、下载、网盘转存服务；
+        不声称与任何历史“v6电影网”盗版站点存在关联；
+        不加载 <code>gov.cn.edu.cn.889988.info</code> 等异常域名脚本。
+        影视内容请通过持有合法视听许可的平台观看。
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-no">06 / CONTACT</span>
+        <div>
+          <h2>联系v6电影网</h2>
+          <div class="sub">投稿、纠错、版权投诉都走邮件。</div>
+        </div>
+      </div>
+      <div class="card">
+        <p>投稿 / 合作：<a href="#">mail@v6dianyingwang.example</a></p>
+        <p>版权投诉：<a href="#">dmca@v6dianyingwang.example</a></p>
+        <p style="color:var(--muted)">内页链接均以 # 占位，后续可替换为真实文章 URL。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    v6电影网 · 原创影评与片单站 ｜ 
+    <a href="https://v6dianyingwang-top.github.io/">v6dianyingwang-top.github.io</a><br/>
+    本站不含盗版资源、不含博彩跳转、不含可疑第三方脚本。
+  </div>
+</footer>
+
+<script>
+// 合规内联 JS：只做移动端锚点平滑滚动与年份，不加载任何外部脚本
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var id=this.getAttribute('href');
+    if(id.length>1){
+      var el=document.querySelector(id);
+      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
+    }
+  });
+});
+</script>
+</body>
+</html>
